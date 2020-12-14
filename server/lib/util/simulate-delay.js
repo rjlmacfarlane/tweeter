@@ -1,3 +1,4 @@
+/* eslint-disable func-style */
 "use strict";
 
 // This module exports a utility function for simulating
@@ -11,7 +12,7 @@ function someMilliseconds() {
   return Math.floor(Math.random() * 400) + 100;
 }
 
+// eslint-disable-next-line func-names
 module.exports = function simulateDelay(callback) {
   setTimeout(callback, someMilliseconds());
-}
-
+};

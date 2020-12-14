@@ -1,0 +1,14 @@
+.account {
+  height: 400px;
+  background-color: #99abf9;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.account h2 {
+  bottom: 30px;
+}
+
