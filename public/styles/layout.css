@@ -24,6 +24,7 @@ body {
 main {
   background-color: #f4f1ec;
   font-family: 'Source Sans Pro', sans-serif;
+  position: relative;
   width: 90%;
   margin: auto;
 }

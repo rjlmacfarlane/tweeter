@@ -1,0 +1,30 @@
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+textarea {
+  flex: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: solid 3px #494a54;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  color: #494a54;
+  height: 50px;
+  outline: none;
+}
+
+input {
+  font-family: 'Bungee', sans-serif;
+  background-color: #293d7c;
+  color: #cee2ff;
+  outline: none;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+  position: relative;
+  left: 0;
+}

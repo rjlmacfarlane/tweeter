@@ -15,11 +15,8 @@ nav #logo {
 
 nav button {
   background: transparent;
-  padding: 5px;
+  padding: 5px 75px;
   display: flex;
-  position:absolute;
-  top: 50%;
-  left:50%;
   align-items: center;
   border: none;
   outline: none;
