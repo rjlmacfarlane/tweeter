@@ -15,6 +15,7 @@ nav #logo {
 
 nav button {
   background: transparent;
+  color: red;
   padding: 5px 75px;
   display: flex;
   align-items: center;

@@ -5,11 +5,6 @@
   margin: 1em 0em;
 }
 
-.tweet:hover {
-  box-shadow: 7px 7px rgb(106, 106, 161);
-}
-
-/* Top part of each tweet */
 .tweet header {
   display: flex;
   justify-content: space-between;
@@ -17,7 +12,7 @@
   padding: .3em;
 }
 
-.handle {
+.alias {
   visibility: hidden;
 }
 
@@ -28,18 +23,16 @@
   right: 0;
 }
 
-/* Content of the tweet */
 .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6em;
+  padding: 1em;
   padding-left: 0.3em;
   border-bottom: 3px solid #494b54;
   overflow-wrap: break-word;
 }
 
-/* Bottom part of the tweet */
 .tweet footer {
   padding: .5em 0em;
   margin: 0em .3em;
@@ -51,8 +44,13 @@
 
 .actions {
   float: right;
-  width: 130px;
+  width: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: rgb(32, 57, 170);
+}
+
+.tweet:hover {
+  box-shadow: 7px 7px rgb(106, 106, 161);
 }
