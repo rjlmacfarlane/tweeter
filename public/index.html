@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -51,6 +52,7 @@
     
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
          <form action="/tweets" method="POST">
@@ -59,6 +61,21 @@
           <span class="counter">140</span>
         </form>
       </section>  
+      <br>
+
+      <section id="tweets-container">
+        <article class="tweet">
+          <header>
+            <span><strong>Newton</strong></span>
+            <span class="alias">@SirIsaac</span>
+          </header>
+              <span class="content">If I have seen further it is by standing on the shoulders of giants.</span>
+          <footer>
+            <span class="footer">Posted 346 years ago</span>
+          </footer>
+          </article>
+      </section>
+
     </main>
   </body>
 </html>
