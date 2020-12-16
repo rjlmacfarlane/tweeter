@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+
+// Create, render, and prepend existing Tweets:
 $(document).ready(function() {
   
   const data = [{
@@ -23,11 +25,9 @@ $(document).ready(function() {
     "created_at": 1119754800000
   }];
 
-
   const renderTweets = function(tweets) {
     
     return tweets.forEach(tweet => {
-      console.log('Line 30 client.js', tweet.user.name);
       $('.tweets-container').prepend(createTweetElement(tweet));
     });
 
@@ -36,7 +36,8 @@ $(document).ready(function() {
   const createTweetElement = function(tweet) {
 
     const datePosted = new Date(tweet.created_at);
-    const article = `<article class="tweet">
+    const article = `
+        <article class="tweet">
           <header>
             <span class="avatar"><img src="${tweet.user.avatars}">
             <span class="name"></span><strong>${tweet.user.name}</strong></span>
@@ -49,14 +50,46 @@ $(document).ready(function() {
               <i class="fab fa-font-awesome-flag"></i>
               <i class="fas fa-retweet"></i>
               <i class="fas fa-heart"></i>
-          </div>
+             </div>
           </footer>
-          </article>`;
+        </article>`;
 
     return article;
+
   };
+
   renderTweets(data);
 
 });
 
-// console.log(renderTweets(data));
+// Submit a new Tweet:
+$(document).ready(function() {
+
+  const submitNewTweet = function(text) {
+
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: text.serialize()
+    })
+      .done(function() {
+        console.log('Success!', text);
+      })
+      .fail(function() {
+        console.log('Error!');
+      })
+      .always(function() {
+        console.log('Done.');
+      });
+
+  };
+
+  $("form").on("submit", function(event) {
+    
+    event.preventDefault();
+    console.log('Performing AJAX request...');
+    submitNewTweet($(this));
+
+  });
+});
+
