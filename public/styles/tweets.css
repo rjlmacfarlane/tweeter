@@ -9,7 +9,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: .3em;
+  padding: .5em 0em;
+  margin: 0em .3em;
 }
 
 .alias {

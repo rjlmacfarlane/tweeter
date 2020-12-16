@@ -19,11 +19,11 @@
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script defer type="text/javascript" src="/scripts/client.js"></script>
+    <script defer type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
   </head>
 
@@ -47,7 +47,7 @@
       <div>
           <h2>Your Name</h2>
       </div>
-  </header>
+    </header>
       
     <!-- Page-specific (main) content here -->
     <main class="container">
@@ -65,10 +65,11 @@
       <section id="tweets-container">
         <article class="tweet">
           <header>
-            <span class="name"><i class="far fa-user"></i><strong>   Newton</strong></span>
+            <span class="avatar"><i class="far fa-user"></i>
+            <span class="name"></span><strong>Newton</strong></span>
             <span class="alias">@SirIsaac</span>
           </header>
-              <span class="content">If have seen further it is by standing on the shoulders of giants.</span>
+              <span class="content">If I have seen further it is by standing on the shoulders of giants.</span>
           <footer>
             <span class="footer">Posted 346 years ago</span>
             <div class="actions">
