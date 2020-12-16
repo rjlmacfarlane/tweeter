@@ -6,6 +6,7 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- External Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
@@ -24,18 +25,17 @@
     <!-- App JS -->
     <script defer type="text/javascript" src="/scripts/client.js"></script>
     <script defer type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <div id="logo">
-        <span>tweeter</span>
+        <span class="animate__animated animate__pulse animate__slow animate__delay-2s animate__infinite">tweeter</span>
       </div>
       <div class="new-messsage">
         <span><strong>Write</strong> a new tweet</span>
-        <button type="button" class="button"><i class="fas fa-angle-double-down"></i></button>
+        <button type="button" class="animate__animated animate__fadeInDown animate__slow animate__delay-3s animate__infinite"><i class="fas fa-angle-double-down"></i></button>
       </div>
     </nav>
 
@@ -53,9 +53,9 @@
     <main class="container">
 
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <h2 class="animate__animated animate__rotateInDownLeft animate__delay-2s">Compose Tweet</h2>
          <form action="/tweets" method="POST">
-          <textarea name="text" placeholder="What are you humming about?" maxlength="140"></textarea>
+          <textarea name="text" placeholder="What are you humming about?" minlength="1" maxlength="140"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>

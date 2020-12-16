@@ -1,24 +1,24 @@
 [
   {
     "user": {
-      "name": "Newton",
+      "name": "Bill Gates",
       "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+      "alias": "@windoze4lyfe"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "Nobody will ever need more than 640 KB of ram."
     },
-    "created_at": 1607977055684
+    "created_at": 1607981199554
   },
   {
     "user": {
-      "name": "Descartes",
+      "name": "Emo Philips",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "alias": "@emophil"
     },
     "content": {
-      "text": "Je pense, donc je suis"
+      "text": "A computer once beat me at chess, but it was no match for me at kick boxing."
     },
-    "created_at": 1608063455684
+    "created_at": 1608067599554
   }
 ]

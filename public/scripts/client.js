@@ -3,28 +3,6 @@
 // Create, render, and prepend existing Tweets:
 $(document).ready(function() {
   
-  const data = [{
-    "user": {
-      "name": "Bill Gates",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "alias": "@windoze4lyfe"
-    },
-    "content": {
-      "text": "Nobody will ever need more than 640 KB of ram."
-    },
-    "created_at": 362372400000
-  },
-  {
-    "user": {
-      "name": "Emo Philips",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "alias": "@emophil" },
-    "content": {
-      "text": "A computer once beat me at chess, but it was no match for me at kick boxing."
-    },
-    "created_at": 1119754800000
-  }];
-
   const renderTweets = function(tweets) {
     
     return tweets.forEach(tweet => {
@@ -35,9 +13,11 @@ $(document).ready(function() {
 
   const createTweetElement = function(tweet) {
 
-    const datePosted = new Date(tweet.created_at);
+    const datePosted = new Date(tweet.created_at).toLocaleString;
     const article = `
+    
         <article class="tweet">
+          <div class="animate__animated animate__fadeInDown">
           <header>
             <span class="avatar"><img src="${tweet.user.avatars}">
             <span class="name"></span><strong>${tweet.user.name}</strong></span>
@@ -52,44 +32,70 @@ $(document).ready(function() {
               <i class="fas fa-heart"></i>
              </div>
           </footer>
+          </div>
         </article>`;
 
     return article;
 
   };
 
-  renderTweets(data);
+  // Submit a new tweet from form:
+  const submitNewTweet = function($form) {
+    const $textarea = $form.children('textarea');
+    const content = $textarea.val().trim();
 
-});
+    if (!content || content === '') {
+      console.log('Content invalid. AJAX request aborted.');
+      alert('You forgot to type something, dummy!');
+    
+    } else {
 
-// Submit a new Tweet:
-$(document).ready(function() {
-
-  const submitNewTweet = function(text) {
-
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: text.serialize()
-    })
-      .done(function() {
-        console.log('Success!', text);
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: $form.serialize()
       })
-      .fail(function() {
-        console.log('Error!');
-      })
-      .always(function() {
-        console.log('Done.');
-      });
-
+        .done(function() {
+          $textarea.val('');
+          console.log('AJAX request: Success!', $form);
+          loadTweets("/tweets", "GET", renderTweets);
+        })
+        .fail(function() {
+          console.log('AJAX request: Error!');
+        })
+        .always(function() {
+          console.log('AJAX request: Done.');
+        });
+  
+    }
   };
-
+ 
   $("form").on("submit", function(event) {
     
     event.preventDefault();
-    console.log('Performing AJAX request...');
+    console.log('Checking content validity...');
     submitNewTweet($(this));
 
   });
+
+  // Load tweets from in-memory database:
+  const loadTweets = function(url, method, callback) {
+    $.ajax({
+      url,
+      method,
+    })
+      .done(function(data) {
+        callback(data);
+      })
+      .fail(function(err) {
+        console.log('Error:', err);
+      })
+      .always(function() {
+        console.log("Load tweet function exited.");
+      });
+  };
+
+  loadTweets("/tweets", "GET", renderTweets);
+
 });
 
