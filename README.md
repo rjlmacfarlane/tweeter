@@ -2,16 +2,36 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+This is a learning project created as part of the education curriculum at Lighthouse Labs.
+
+## Features
+
+- Tired of embarrassing yourself on Twitter? Use Tweeter instead! As a learning project Tweeter has no internet connectivity: it keeps your obnoxious, inflammatory remarks safe on your local computer where employers and family can't see them!
+- Try it out on Desktop & Mobile! The responsive design will automatically adjust to fit your screen.
+- Want to change the colour scheme and animations? Flex your developer skills and dig in to those CSS files!
+
+## Final Product
+
+!["Post hilarious one-liners"]()
+!["Keep it brief!"]()
+!["Manage your URLS"]()
+
 
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
 2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+3. Start the web server using the `npm run local` command. The app will be served at on port 8080.
+4. Go to <http://localhost:8080/> in your browser, your http://192.168.x.x:8080/ on mobile.
 
 ## Dependencies
 
-- Express
-- Node 5.10.x or above
+- Fortawesome/fontawesome-free ^5.15.1
+- Body-parser ^1.15.2
+- Chance 1.0.2
+- Express ^4.13.4
+- md5 2.1.0
+
+## Dependencies
+
+- Nodemon ^1.9.2

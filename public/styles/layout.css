@@ -13,11 +13,12 @@ html {
 /*
  * Global layout stuff
  */
-
+ 
  
 body {
  color: #494b54;
  background-color: #fdeacc;
+ background-image: url("https://www.transparenttextures.com/patterns/exclusive-paper.png");
  font-family: 'Source Sans Pro', sans-serif;
  font-size: 24px;
  margin-top: 100px;

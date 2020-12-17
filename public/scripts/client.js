@@ -7,23 +7,24 @@ const escape =  function(str) {
   return div.innerHTML;
 };
 
-
 // Create, render, and prepend existing Tweets:
 $(document).ready(function() {
   
+  // Inject rendered tweets into HTML:
   const renderTweets = function(tweets) {
     
     return tweets.forEach(tweet => {
       $('.tweets-container').prepend(createTweetElement(tweet));
     });
-
   };
 
+  // Generate HTML for prepend:
   const createTweetElement = function(tweet) {
     
     const tweetDate = new Date(tweet.created_at);
+    
+    // Render date into past tense (ago) format:
     const timeSince = () => {
-  
       const now = new Date();
       const msInDay = 24 * 60 * 60 * 1000;
       const days = (now - tweetDate) / msInDay;
@@ -94,6 +95,7 @@ $(document).ready(function() {
           $textarea.val('');
           $form.children('.counter').text('140');
           console.log('AJAX request: Success!', $form);
+          $('.tweets-container').empty();
           loadTweets("/tweets", "GET", renderTweets);
         })
         .fail(function() {
@@ -106,6 +108,7 @@ $(document).ready(function() {
     }
   };
  
+  // New tweet event handler:
   $("form").on("submit", function(event) {
     
     event.preventDefault();
@@ -141,7 +144,7 @@ $(document).ready(function() {
 
   };
   
+  // Initial page load:
   loadTweets('/tweets', 'GET', renderTweets);
 
 });
-
