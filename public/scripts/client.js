@@ -20,27 +20,32 @@ $(document).ready(function() {
   };
 
   const createTweetElement = function(tweet) {
-    const datePosted = new Date(tweet.created_at);
-
-    const postedAgo = () => {
+    
+    const tweetDate = new Date(tweet.created_at);
+    const timeSince = () => {
+  
       const now = new Date();
       const msInDay = 24 * 60 * 60 * 1000;
-      const diffInDay = (now - datePosted) / msInDay;
-      const diffInHours = diffInDay * 24;
-      const diffInMinutes = diffInHours * 60;
-      if (Math.floor(diffInHours) === 0) {
-        return `${Math.floor(diffInMinutes)} minutes`;
-      } else if (Math.floor(diffInDay / 365) === 0) {
-        return `${Math.floor(diffInHours)} hours`;
-      } else if (diffInDay < 31) {
-        return `${Math.floor(diffInDay / 365)} days`;
-      } else if (diffInDay <= 365) {
-        return `${Math.floor(diffInDay / 31)} months`;
+      const days = (now - tweetDate) / msInDay;
+      const hours = days * 24;
+      const minutes = hours * 60;
+      
+      if (Math.floor(hours) === 0) {
+        return `${Math.floor(minutes)} minutes`;
+      
+      } else if (Math.floor(days / 365) === 0) {
+        return `${Math.floor(hours)} hours`;
+      
+      } else if (days < 31) {
+        return `${Math.floor(days / 365)} days`;
+     
+      } else if (days <= 365) {
+        return `${Math.floor(days / 31)} months`;
+     
       } else {
-        return `${Math.floor(diffInDay / 365)} years`;
+        return `${Math.floor(days / 365)} years`;
       }
     };
-
 
     const article = `
     
@@ -53,7 +58,7 @@ $(document).ready(function() {
           </header>
               <span class="content">${escape(tweet.content.text)}</span>
           <footer>
-            <span class="footer">Posted ${postedAgo()} ago</span>
+            <span class="footer">Posted ${timeSince()} ago</span>
             <span class="actions">
               <i class="fab fa-font-awesome-flag"></i>
               <i class="fas fa-retweet"></i>
@@ -97,7 +102,7 @@ $(document).ready(function() {
         .always(function() {
           console.log('AJAX request: Done.');
         });
-  
+      return;
     }
   };
  
@@ -111,6 +116,7 @@ $(document).ready(function() {
 
   // Load tweets from in-memory database:
   const loadTweets = function(url, method, callback) {
+    console.log('loadTweets hit');
     $(".error-message").hide();
     $(".new-tweet").hide();
 
@@ -134,7 +140,7 @@ $(document).ready(function() {
     });
 
   };
-
+  
   loadTweets('/tweets', 'GET', renderTweets);
 
 });

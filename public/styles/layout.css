@@ -14,18 +14,49 @@ html {
  * Global layout stuff
  */
 
+ 
 body {
-  color: #494b54;
-  background-color: #f4f1ec;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 24px;
-  margin-top: 100px;
+ color: #494b54;
+ background-color: #fdeacc;
+ font-family: 'Source Sans Pro', sans-serif;
+ font-size: 24px;
+ margin-top: 100px;
+}
+
+body .account {
+  color: #fdeacc;
 }
 
 main {
-  background-color: #f4f1ec;
-  font-family: 'Source Sans Pro', sans-serif;
   position: relative;
   width: 90%;
   margin: auto;
 }
+  
+main input:hover {
+  cursor: pointer;
+}
+
+
+@media (min-width: 1024px) {
+  
+  body {
+    display: flex;
+  }
+
+  main {
+    width: 50%;
+    margin-right: 2em;
+  }
+
+  .account {
+    position: fixed;
+    width: 35%;
+    margin: 1em 1em 1em 2em;
+    padding-top: 1em;
+    border-radius: 5%;
+  }
+}
+
+
+

@@ -58,5 +58,6 @@
 }
 
 .tweet:hover {
-  box-shadow: 7px 7px rgb(106, 106, 161);
+  background-color: #fff2dc;
+  box-shadow: 7px 7px #00144f;
 }

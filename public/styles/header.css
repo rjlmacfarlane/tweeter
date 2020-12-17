@@ -1,8 +1,7 @@
 .account {
   height: 400px;
-  background-color: #99abf9;
-  color: #FFFFFF;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  background-color: #00144f;
+  background-image: url("https://www.transparenttextures.com/patterns/classy-fabric.png");
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,4 +11,3 @@
 .account h2 {
   bottom: 30px;
 }
-

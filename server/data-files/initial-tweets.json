@@ -8,7 +8,7 @@
     "content": {
       "text": "Nobody will ever need more than 640 KB of ram."
     },
-    "created_at": 1608045426775
+    "created_at": 1607983074225
   },
   {
     "user": {
@@ -19,6 +19,17 @@
     "content": {
       "text": "A computer once beat me at chess, but it was no match for me at kick boxing."
     },
-    "created_at": 1608131826775
+    "created_at": 1608069474225
+  },
+  {
+    "user": {
+      "name": "Steven Wright",
+      "avatars": "images/steven-wright-thumb.png",
+      "alias": "@swright"
+    },
+    "content": {
+      "text": "For my birthday I got a humidifier and a de-humidifier. I put them in the same room and let them fight it out."
+    },
+    "created_at": 1608155874225
   }
 ]
