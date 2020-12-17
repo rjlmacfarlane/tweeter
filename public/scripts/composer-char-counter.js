@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+
+// Decrement character counter on input, alert user at limit:
 $(document).ready(function() {
 
   $('textarea').on('input', function() {

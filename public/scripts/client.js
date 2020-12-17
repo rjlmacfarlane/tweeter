@@ -7,6 +7,7 @@ const escape =  function(str) {
   return div.innerHTML;
 };
 
+
 // Create, render, and prepend existing Tweets:
 $(document).ready(function() {
   
@@ -19,9 +20,28 @@ $(document).ready(function() {
   };
 
   const createTweetElement = function(tweet) {
+    const datePosted = new Date(tweet.created_at);
 
-    // const datePosted = new Date(tweet.created_at);
-    const datePosted = new Date(tweet["created_at"]).toLocaleString();
+    const postedAgo = () => {
+      const now = new Date();
+      const msInDay = 24 * 60 * 60 * 1000;
+      const diffInDay = (now - datePosted) / msInDay;
+      const diffInHours = diffInDay * 24;
+      const diffInMinutes = diffInHours * 60;
+      if (Math.floor(diffInHours) === 0) {
+        return `${Math.floor(diffInMinutes)} minutes`;
+      } else if (Math.floor(diffInDay / 365) === 0) {
+        return `${Math.floor(diffInHours)} hours`;
+      } else if (diffInDay < 31) {
+        return `${Math.floor(diffInDay / 365)} days`;
+      } else if (diffInDay <= 365) {
+        return `${Math.floor(diffInDay / 31)} months`;
+      } else {
+        return `${Math.floor(diffInDay / 365)} years`;
+      }
+    };
+
+
     const article = `
     
         <article class="tweet">
@@ -33,7 +53,7 @@ $(document).ready(function() {
           </header>
               <span class="content">${escape(tweet.content.text)}</span>
           <footer>
-            <span class="footer">Posted ${datePosted}</span>
+            <span class="footer">Posted ${postedAgo()} ago</span>
             <span class="actions">
               <i class="fab fa-font-awesome-flag"></i>
               <i class="fas fa-retweet"></i>
