@@ -40,7 +40,7 @@ module.exports = {
 
     return {
       name: userName,
-      handle: userHandle,
+      alias: userHandle,
       avatars: userAvatar
     };
   }

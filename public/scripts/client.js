@@ -1,5 +1,12 @@
 /* eslint-disable no-undef */
 
+// Prevent XSS attack (escape malicious text)
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 // Create, render, and prepend existing Tweets:
 $(document).ready(function() {
   
@@ -13,24 +20,25 @@ $(document).ready(function() {
 
   const createTweetElement = function(tweet) {
 
-    const datePosted = new Date(tweet.created_at).toLocaleString;
+    // const datePosted = new Date(tweet.created_at);
+    const datePosted = new Date(tweet["created_at"]).toLocaleString();
     const article = `
     
         <article class="tweet">
-          <div class="animate__animated animate__fadeInDown">
+          <div class="animate__animated animate__fadeIn">
           <header>
             <span class="avatar"><img src="${tweet.user.avatars}">
             <span class="name"></span><strong>${tweet.user.name}</strong></span>
             <span class="alias">${tweet.user.alias}</span>
           </header>
-              <span class="content">${tweet.content.text}</span>
+              <span class="content">${escape(tweet.content.text)}</span>
           <footer>
             <span class="footer">Posted ${datePosted}</span>
-            <div class="actions">
+            <span class="actions">
               <i class="fab fa-font-awesome-flag"></i>
               <i class="fas fa-retweet"></i>
               <i class="fas fa-heart"></i>
-             </div>
+             </span>
           </footer>
           </div>
         </article>`;
@@ -46,7 +54,9 @@ $(document).ready(function() {
 
     if (!content || content === '') {
       console.log('Content invalid. AJAX request aborted.');
-      alert('You forgot to type something, dummy!');
+      $('.error-message').slideDown();
+      $('.error-message strong').text("Did you forget to type something?");
+      return;
     
     } else {
 
@@ -57,6 +67,7 @@ $(document).ready(function() {
       })
         .done(function() {
           $textarea.val('');
+          $form.children('.counter').text('140');
           console.log('AJAX request: Success!', $form);
           loadTweets("/tweets", "GET", renderTweets);
         })
@@ -80,6 +91,9 @@ $(document).ready(function() {
 
   // Load tweets from in-memory database:
   const loadTweets = function(url, method, callback) {
+    $(".error-message").hide();
+    $(".new-tweet").hide();
+
     $.ajax({
       url,
       method,
@@ -91,11 +105,17 @@ $(document).ready(function() {
         console.log('Error:', err);
       })
       .always(function() {
-        console.log("Load tweet function exited.");
+        console.log('Load tweet function exited.');
       });
+
+    $("nav button").on('click', function() {
+      $(".new-tweet").slideToggle();
+      $("textarea").focus();
+    });
+
   };
 
-  loadTweets("/tweets", "GET", renderTweets);
+  loadTweets('/tweets', 'GET', renderTweets);
 
 });
 

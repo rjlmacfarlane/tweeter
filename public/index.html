@@ -31,35 +31,36 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <div id="logo">
-        <span class="animate__animated animate__pulse animate__slow animate__delay-2s animate__infinite">tweeter</span>
+        <span class="animate__animated animate__rotateInDownLeft">tweeter</span>
       </div>
       <div class="new-messsage">
         <span><strong>Write</strong> a new tweet</span>
-        <button type="button" class="animate__animated animate__fadeInDown animate__slow animate__delay-3s animate__infinite"><i class="fas fa-angle-double-down"></i></button>
+        <button type="button" class="animate__animated animate__heartBeat animate__slow animate__delay-1s animate__infinite" value='hide/show'><i class="fas fa-angle-double-down"></i></button>
       </div>
     </nav>
 
     <header class="account">
-      <div>
+      <div class="animate__animated animate__backInDown">
           <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Your Name</h2>
+           <h2>Happy Little Tree</h2>
       </div>
     </header>
       
     <!-- Page-specific (main) content here -->
     <main class="container">
-
+      
       <section class="new-tweet">
-        <h2 class="animate__animated animate__rotateInDownLeft animate__delay-2s">Compose Tweet</h2>
+        <h2 class="animate__animated animate__rotateInDownLeft">Compose Tweet</h2>
          <form action="/tweets" method="POST">
           <textarea name="text" placeholder="What are you humming about?" minlength="1" maxlength="140"></textarea>
-          <input type="submit" value="Tweet">
+          <input type="submit" value="Tweet" class="animate__animated animate__pulse animate__infinite">
+          <div class="error-message">
+            <img src="/images/error-icon.png">
+          </div>
           <span class="counter">140</span>
         </form>
-      </section>  
+      </section>
+      
       <br>
 
       <section class="tweets-container">

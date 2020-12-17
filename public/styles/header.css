@@ -1,6 +1,7 @@
 .account {
   height: 400px;
   background-color: #99abf9;
+  color: #FFFFFF;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
   display: flex;
   flex-direction: column;
