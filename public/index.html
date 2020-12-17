@@ -51,15 +51,20 @@
       
     <!-- Page-specific (main) content here -->
     <main class="container">
-
+      
       <section class="new-tweet">
         <h2 class="animate__animated animate__rotateInDownLeft animate__delay-2s">Compose Tweet</h2>
          <form action="/tweets" method="POST">
           <textarea name="text" placeholder="What are you humming about?" minlength="1" maxlength="140"></textarea>
           <input type="submit" value="Tweet">
+          <div class="error-message">
+            <img src="/images/error-icon.png">
+            <span><strong></strong></span>
+          </div>
           <span class="counter">140</span>
         </form>
-      </section>  
+      </section>
+      
       <br>
 
       <section class="tweets-container">

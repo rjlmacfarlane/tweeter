@@ -12,6 +12,7 @@ $(document).ready(function() {
     } else {
       $target.css("color", "#494b54");
       $target.text(maxChars - charCount);
+      $(".error-message").slideUp();
 
     }
   });
