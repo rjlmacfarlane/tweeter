@@ -118,7 +118,6 @@ $(document).ready(function() {
 
   // Load tweets from in-memory database:
   const loadTweets = function(url, method, callback) {
-    console.log('loadTweets hit');
     $(".error-message").hide();
     $(".new-tweet").hide();
 
@@ -140,9 +139,10 @@ $(document).ready(function() {
   $("nav button").on('click', function() {
     $(".new-tweet").slideToggle();
     $("textarea").focus();
+    
   });
 
   // Initial page load:
   loadTweets('/tweets', 'GET', renderTweets);
-
+  autosize($("textarea"));
 });
