@@ -12,7 +12,6 @@ $(document).ready(function() {
   
   // Inject rendered tweets into HTML:
   const renderTweets = function(tweets) {
-    
     return tweets.forEach(tweet => {
       $('.tweets-container').prepend(createTweetElement(tweet));
     });
