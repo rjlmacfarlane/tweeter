@@ -13,8 +13,6 @@ This is a learning project created as part of the education curriculum at Lighth
 ## Final Product
 
 !["On Browser and Mobile!"](https://github.com/rjlmacfarlane/tweeter/blob/master/docs/desktop-mobile.png)
-!["Post deadpan humour!"](https://github.com/rjlmacfarlane/tweeter/blob/master/docs/one-liners.png)
-!["Keep it brief!"](https://github.com/rjlmacfarlane/tweeter/blob/master/docs/limit-char.png)
 
 ## Getting Started
 

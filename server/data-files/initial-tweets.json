@@ -8,7 +8,7 @@
     "content": {
       "text": "Nobody will ever need more than 640 KB of ram."
     },
-    "created_at": 1607999632648
+    "created_at": 1607999875612
   },
   {
     "user": {
@@ -19,7 +19,7 @@
     "content": {
       "text": "A computer once beat me at chess, but it was no match for me at kick boxing."
     },
-    "created_at": 1608086032648
+    "created_at": 1608086275612
   },
   {
     "user": {
@@ -30,6 +30,6 @@
     "content": {
       "text": "For my birthday I got a humidifier and a de-humidifier. I put them in the same room and let them fight it out."
     },
-    "created_at": 1608172432648
+    "created_at": 1608172675612
   }
 ]
