@@ -12,7 +12,7 @@ This is a learning project created as part of the education curriculum at Lighth
 
 ## Final Product
 
-!["On Browser and Mobile!"](https://github.com/rjlmacfarlane/tweeter/blob/master/docs/desktop-mobile.png)
+!["On Browser and Mobile!"](https://github.com/rjlmacfarlane/tweeter/blob/master/docs/mobile-desktop.png)
 
 ## Getting Started
 
