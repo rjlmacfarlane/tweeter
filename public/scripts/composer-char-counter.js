@@ -9,7 +9,9 @@ $(document).ready(function() {
     const $target = $(this).nextAll(".counter");
 
     if (maxChars - charCount === 0) {
-      $target.css("color", "#c03333").text("Limit reached!", maxChars - charCount);
+      $target.css("color", "#c03333").text(maxChars - charCount);
+      $('.error-message').slideDown();
+      $('.error-message strong').text("Character limit reached!");
     
     } else if (maxChars - charCount < 16) {
       $target.css("color", "#c26a18").text(maxChars - charCount);
