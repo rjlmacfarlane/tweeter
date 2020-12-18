@@ -28,6 +28,7 @@
   padding-left: 0.3em;
   border-bottom: 3px solid #494b54;
   overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 .tweet footer {

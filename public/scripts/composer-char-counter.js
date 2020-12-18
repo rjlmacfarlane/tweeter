@@ -15,6 +15,7 @@ $(document).ready(function() {
     
     } else if (maxChars - charCount < 16) {
       $target.css("color", "#c26a18").text(maxChars - charCount);
+      $(".error-message").slideUp();
     
     } else {
       $target.css("color", "#494b54");
