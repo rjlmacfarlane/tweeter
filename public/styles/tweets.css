@@ -14,10 +14,6 @@
 }
 
 .alias {
-  visibility: hidden;
-}
-
-.tweet:hover .alias {
   visibility: visible;
   color: rgb(106, 106, 161);
   position: relative;
