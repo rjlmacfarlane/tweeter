@@ -15,7 +15,8 @@ nav {
 nav #logo {
   font-family: 'Bungee', cursive, sans-serif;
   display: flex;
-  align-items: center;
+  align-items: top;
+  margin: 10 20px;
 }
 
 nav button {
@@ -40,7 +41,7 @@ nav button:hover {
 }
 
 @media (max-width: 480px) {
-  nav #logo {
-    visibility: hidden;
+  nav {
+    font-size: 0.8em;
   }
 }

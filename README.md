@@ -12,9 +12,9 @@ This is a learning project created as part of the education curriculum at Lighth
 
 ## Final Product
 
-!["Post hilarious one-liners"]()
+!["Post deadpan humour!"]()
 !["Keep it brief!"]()
-!["Manage your URLS"]()
+!["On Browser and Mobile!"]()
 
 
 ## Getting Started
