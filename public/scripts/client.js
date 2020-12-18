@@ -135,14 +135,13 @@ $(document).ready(function() {
       .always(function() {
         console.log('Load tweet function exited.');
       });
-
-    $("nav button").on('click', function() {
-      $(".new-tweet").slideToggle();
-      $("textarea").focus();
-    });
-
   };
-  
+    
+  $("nav button").on('click', function() {
+    $(".new-tweet").slideToggle();
+    $("textarea").focus();
+  });
+
   // Initial page load:
   loadTweets('/tweets', 'GET', renderTweets);
 
